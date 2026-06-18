@@ -7,9 +7,10 @@ import java.sql.*;
 import java.util.stream.Collectors;
 
 public class App {
-private static final String DB_URL = System.getenv("DB_URL");
-private static final String DB_USER = System.getenv("DB_USER");
-private static final String DB_PASSWORD = System.getenv("DB_PASSWORD");
+//  新寫法：加上 .trim() 自動刪除可能存在的隱形空格
+private static final String DB_URL = System.getenv("DB_URL") != null ? System.getenv("DB_URL").trim() : null;
+private static final String DB_USER = System.getenv("DB_USER") != null ? System.getenv("DB_USER").trim() : null;
+private static final String DB_PASSWORD = System.getenv("DB_PASSWORD") != null ? System.getenv("DB_PASSWORD").trim() : null;
     public static void main(String[] args) throws Exception {
     // 1. 動態讀取 Render 分配的 PORT，如果沒有（在地端環境）則預設為 8080
     String portStr = System.getenv("PORT");
