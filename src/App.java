@@ -7,8 +7,9 @@ import java.sql.*;
 import java.util.stream.Collectors;
 
 public class App {
-private static final String DB_URL = "jdbc:mysql://bqpot4qp10h8enc9j78c-mysql.services.clever-cloud.com:3306/bqpot4qp10h8enc9j78c?serverTimezone=UTC&sslMode=REQUIRED&allowPublicKeyRetrieval=true";    private static final String DB_USER = "u13fdbq9vhlx4z64";
-    private static final String DB_PASSWORD = "F3t4vsqXWxfnkfexdncQ";
+private static final String DB_URL = "jdbc:mysql://bulctmkhde5y9gvqngpi-mysql.services.clever-cloud.com:3306/bulctmkhde5y9gvqngpi?serverTimezone=UTC&sslMode=PREFERRED&allowPublicKeyRetrieval=true";
+    private static final String DB_USER = "uhtbk3tz6f0wcpzn";
+    private static final String DB_PASSWORD = "ZQLmDroWsza6D5LWBJub";
     public static void main(String[] args) throws Exception {
         // 監聽 8080 連接埠
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
