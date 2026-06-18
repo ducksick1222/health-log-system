@@ -9,10 +9,10 @@ import java.util.stream.Collectors;
 public class App {
 
     // 1. MySQL 連線設定
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/health_db?serverTimezone=UTC";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "23344677"; // 已套用你的資料庫密碼
-
+    // 1. MySQL 雲端連線設定（已為你替換為 Clever Cloud 資訊）
+    private static final String DB_URL = "jdbc:mysql://bqpot4qp10h8enc9j78c-mysql.services.clever-cloud.com:3306/bqpot4qp10h8enc9j78c?serverTimezone=UTC";
+    private static final String DB_USER = "u13fdbq9vhlx4z64";
+    private static final String DB_PASSWORD = "F3t4vsqXWxfnkfexdncQ";
     public static void main(String[] args) throws Exception {
         // 監聽 8080 連接埠
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
