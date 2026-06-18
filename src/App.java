@@ -11,17 +11,21 @@ private static final String DB_URL = System.getenv("DB_URL");
 private static final String DB_USER = System.getenv("DB_USER");
 private static final String DB_PASSWORD = System.getenv("DB_PASSWORD");
     public static void main(String[] args) throws Exception {
-        // 監聽 8080 連接埠
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-        System.out.println("🚀 後端伺服器已啟動，正在監聽 http://localhost:8080");
+    // 1. 動態讀取 Render 分配的 PORT，如果沒有（在地端環境）則預設為 8080
+    String portStr = System.getenv("PORT");
+    int port = (portStr != null) ? Integer.parseInt(portStr) : 8080;
 
-        // 2. 路由註冊 (對應題目要求的 API 端點)
-        server.createContext("/health-logs", new HealthLogHandler());
-        server.createContext("/health-logs/risk", new RiskHandler());
+    // 2. 使用動態的 port 建立伺服器
+    HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
+    System.out.println("🚀 後端伺服器已啟動，正在監聽連接埠: " + port);
 
-        server.setExecutor(null);
-        server.start();
-    }
+    // // 2. 路由註冊（對應題目要求的 API 端點）
+    server.createContext("/health-logs", new HealthLogHandler());
+    server.createContext("/health-logs/risk", new RiskHandler());
+
+    server.setExecutor(null);
+    server.start();
+}
 
     /**
      * 核心邏輯：決策樹風險評估 (對應評分對照表 5.2)
