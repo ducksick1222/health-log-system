@@ -7,10 +7,7 @@ import java.sql.*;
 import java.util.stream.Collectors;
 
 public class App {
-
-    // 1. MySQL 連線設定
-    // 1. MySQL 雲端連線設定（已為你替換為 Clever Cloud 資訊）
-  private static final String DB_URL = "jdbc:mysql://bqpot4qp10h8enc9j78c-mysql.services.clever-cloud.com:3306/bqpot4qp10h8enc9j78c?serverTimezone=UTC&useSSL=true&verifyServerCertificate=false&allowPublicKeyRetrieval=true";
+private static final String DB_URL = "jdbc:mysql://bqpot4qp10h8enc9j78c-mysql.services.clever-cloud.com:3306/bqpot4qp10h8enc9j78c?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true";
     private static final String DB_USER = "u13fdbq9vhlx4z64";
     private static final String DB_PASSWORD = "F3t4vsqXWxfnkfexdncQ";
     public static void main(String[] args) throws Exception {
