@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.stream.Collectors;
 
 public class App {
-private static final String DB_URL = "jdbc:mysql://bqpot4qp10h8enc9j78c-mysql.services.clever-cloud.com:3306/bqpot4qp10h8enc9j78c?serverTimezone=UTC&sslMode=PREFERRED&allowPublicKeyRetrieval=true";
+    private static final String DB_URL = "jdbc:mysql://bqpot4qp10h8enc9j78c-mysql.services.clever-cloud.com:3306/bqpot4qp10h8enc9j78c?serverTimezone=UTC&useSSL=true&verifyServerCertificate=false&allowPublicKeyRetrieval=true";
     private static final String DB_USER = "u13fdbq9vhlx4z64";
     private static final String DB_PASSWORD = "F3t4vsqXWxfnkfexdncQ";
     public static void main(String[] args) throws Exception {
