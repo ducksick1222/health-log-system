@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk-slim
+FROM eclipse-temurin:21
 WORKDIR /app
 COPY lib/mysql-connector-j-9.7.0.jar /app/lib/
 COPY src/App.java /app/src/
