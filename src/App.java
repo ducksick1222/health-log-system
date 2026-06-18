@@ -186,10 +186,10 @@ try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)
                 }
 
             } catch (Exception e) {
-            // 下方維持原樣
-                statusCode = 500;
-                response = "{\"error\":\"" + e.getMessage() + "\"}";
-                e.printStackTrace();
+    statusCode = 500;
+    // 不要把 e.getMessage() 直接塞進 JSON，改成單純的伺服器錯誤提示
+    response = "{\"error\":\"Internal Server Error, please check backend logs.\"}";
+    e.printStackTrace(); // 真實錯誤留在後端控制台看就好
             }
 
             // 發送回應
